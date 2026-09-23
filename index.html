@@ -1,11 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SICAD | Control de Asistencia</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
-    
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>SICAD</h2>
+            <span>Control de Asistencia</span>
+        </div>
+
+        <nav>
+
+            <button onclick="mostrarSeccion('inicio')">
+                Inicio
+            </button>
+
+            <button onclick="mostrarSeccion('personal')">
+                Personal
+            </button>
+
+            <button onclick="mostrarSeccion('horarios')">
+                Horarios
+            </button>
+
+            <button onclick="mostrarSeccion('asistencia')">
+                Asistencia
+            </button>
+
+            <button onclick="mostrarSeccion('consultas')">
+                Consultas
+            </button>
+
+            <button onclick="mostrarSeccion('reportes')">
+                Reportes
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="contenido">
+
+        <header class="barra-superior">
+
+            <div>
+                <h1>Sistema de Control de Asistencia</h1>
+                <p>SICAD</p>
+            </div>
+
+            <div class="usuario">
+                Administrador
+            </div>
+
+        </header>
+
+
+        <section id="inicio" class="seccion activa">
+
+            <h2>Resumen general</h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <span>Personal registrado</span>
+                    <strong id="totalPersonal">0</strong>
+                </div>
+
+                <div class="tarjeta">
+                    <span>Asistencias</span>
+                    <strong id="totalAsistencias">0</strong>
+                </div>
+
+                <div class="tarjeta">
+                    <span>Retardos</span>
+                    <strong id="totalRetardos">0</strong>
+                </div>
+
+                <div class="tarjeta">
+                    <span>Faltas</span>
+                    <strong id="totalFaltas">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="personal" class="seccion">
+
+            <h2>Registro de personal</h2>
+
+            <form id="formPersonal">
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre completo"
+                    required
+                >
+
+                <select id="tipoPersonal">
+
+                    <option value="">
+                        Tipo de personal
+                    </option>
+
+                    <option value="Docente">
+                        Docente
+                    </option>
+
+                    <option value="Administrativo">
+                        Administrativo
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    id="departamento"
+                    placeholder="Departamento"
+                >
+
+                <input
+                    type="time"
+                    id="horaEntrada"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="horaSalida"
+                    required
+                >
+
+                <button type="submit">
+                    Registrar personal
+                </button>
+
+            </form>
+
+            <div id="tablaPersonal"></div>
+
+        </section>
+
+
+        <section id="horarios" class="seccion">
+
+            <h2>Horarios</h2>
+
+            <p>
+                Administración de horarios del personal.
+            </p>
+
+        </section>
+
+
+        <section id="asistencia" class="seccion">
+
+            <h2>Registrar asistencia</h2>
+
+            <div id="registroAsistencia"></div>
+
+        </section>
+
+
+        <section id="consultas" class="seccion">
+
+            <h2>Consulta de asistencia</h2>
+
+            <div id="consultaResultados"></div>
+
+        </section>
+
+
+        <section id="reportes" class="seccion">
+
+            <h2>Reportes quincenales</h2>
+
+            <div id="generadorReporte">
+
+                <label>Personal</label>
+
+                <select id="empleadoReporte">
+                    <option value="">
+                        Seleccionar personal
+                    </option>
+                </select>
+
+                <br><br>
+
+                <label>Fecha inicial</label>
+
+                <input
+                    type="date"
+                    id="fechaInicio"
+                >
+
+                <label>Fecha final</label>
+
+                <input
+                    type="date"
+                    id="fechaFin"
+                >
+
+                <br><br>
+
+                <button onclick="generarReporte()">
+                    Generar reporte
+                </button>
+
+                <button onclick="imprimirReporte()">
+                    Imprimir / PDF
+                </button>
+
+            </div>
+
+            <div id="reporte"></div>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
 </body>
 </html>
