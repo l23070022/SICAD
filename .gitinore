@@ -1,0 +1,25 @@
+name: testPush
+
+
+on:
+ push:
+ branches: prog1
+ jobs:
+bulid:
+runs-on: ubuntu-lateste
+permissones:
+  constents: write
+
+spteps:
+ -name: checkouut rapo
+ uses: actions/checkout@v7
+ 
+ -name: commite and push changes
+ uses: stefanweifel/git-auto-commit-action@v7
+ whit:
+   commit_message: Archivos Actualizados #Archi
+   commit_user_name: Pro1
+   commit_user_email: l23070022@huetamo.tecnm.mx
+   commit_author: Monse Suarez
+
+
