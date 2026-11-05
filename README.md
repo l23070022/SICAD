@@ -40,7 +40,7 @@ Para utilizar el proyecto se deben seguir los siguientes pasos:
 
 *El proyecto SICAD busca facilitar el control de asistencia mediante el
  uso de herramientas tecnológicas, mejorando la organización y consulta de 
- los registros.*
+ los registros..*
 
 ## Imagen del proyecto
 
