@@ -22,7 +22,7 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Archivos Actualizados"
+          commit_message: "Archivo Actualizados"
           commit_user_name: "prog1"
           commit_user_email: "L23070022@huetamo.tecnm.mx"
           commit_author: "Monserrat Suarez <L23070022@huetamo.tecnm.mx>"
