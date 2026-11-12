@@ -35,7 +35,7 @@ jobs:
 
           echo "Estructura HTML basica correcta."
           
-# grep -q Busca un texto y comunica si lo encontre mediante un 
+# grep -q Busca un texto y comunica si lo encontre mediante un.
       - name: Verefy CSS reference
         run: | 
           echo "Verificando referencia a styles.css..."
