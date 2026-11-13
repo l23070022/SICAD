@@ -1,0 +1,33 @@
+
+name: Validacion del proyecto SICAD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validar:
+    name: Verificar estructura de SICAD
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivo principal
+        run: test -f index.html
+
+      - name: Verificar carpeta CSS
+        run: test -d css
+
+      - name: Verificar carpeta JavaScript
+        run: test -d js
+
+      - name: Verificar archivos del proyecto
+        run: |
+          echo "Proyecto SICAD verificado"
+          echo "La estructura principal existe correctamente"
